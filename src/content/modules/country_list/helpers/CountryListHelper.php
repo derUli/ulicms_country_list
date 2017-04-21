@@ -1,7 +1,7 @@
 <?php
 class CountryListHelper extends Helper {
 	public function sync() {
-		$fileCountries = $this->getAllCountries ();
+		$fileCountries = $this->getAllCountries ( "en" );
 		foreach ( $fileCountries as $country ) {
 			$sql = "select code from `{prefix}country` where code = ?";
 			$args = array (
@@ -9,7 +9,7 @@ class CountryListHelper extends Helper {
 			);
 			$query = Database::pQuery ( $sql, $args, true );
 			if (! Database::any ( $query )) {
-				$sql = Database::pQuery ( "insert into `{prefix}country` (code) values (?)" );
+				$sql = "insert into `{prefix}country` (code) values (?)";
 				$args = array (
 						$country->code 
 				);
@@ -31,14 +31,14 @@ class CountryListHelper extends Helper {
 		if (! $language) {
 			$language = getCurrentLanguage ( true );
 		}
-		$file = getModulePath ( "country_list", true ) . "/data/" . $folder . "/" . $language . ".txt";
+		$file = getModulePath ( "country_list", true ) . "data/" . $folder . "/" . $language . ".txt";
 		// @FIXME: Prüfen ob Datei existiert
 		// und Exception werfen wenn Datei nicht vorhanden
-		$data = file_get_contents ( $data );
+		$data = file_get_contents ( $file );
 		$data = normalizeLN ( $data, "\n" );
 		$data = explode ( "\n", $data );
-		foreach ( $data as $line ) {
-			$myLine = trim ( $line );
+		for($i = 0; $i < count ( $data ); $i ++) {
+			$myLine = trim ( $data [$i] );
 			if (! empty ( $myLine )) {
 				$splitted = explode ( ":", $myLine );
 				$country = new Country ();
@@ -54,14 +54,14 @@ class CountryListHelper extends Helper {
 		if (! $language) {
 			$language = getCurrentLanguage ( true );
 		}
-		$file = getModulePath ( "country_list", true ) . "/data/" . $folder . "/" . $language . ".txt";
+		$file = getModulePath ( "country_list", true ) . "data/" . $folder . "/" . $language . ".txt";
 		// @FIXME: Prüfen ob Datei existiert
 		// und Exception werfen wenn Datei nicht vorhanden
-		$data = file_get_contents ( $data );
+		$data = file_get_contents ( $file );
 		$data = normalizeLN ( $data, "\n" );
 		$data = explode ( "\n", $data );
-		foreach ( $data as $line ) {
-			$myLine = trim ( $line );
+		for($i = 0; $i < count ( $data ); $i ++) {
+			$myLine = trim ( $data [$i] );
 			if (! empty ( $myLine )) {
 				$splitted = explode ( ":", $myLine );
 				$country = new Country ();
@@ -80,14 +80,14 @@ class CountryListHelper extends Helper {
 		if (! $language) {
 			$language = getCurrentLanguage ( true );
 		}
-		$file = getModulePath ( "country_list", true ) . "/data/" . $folder . "/" . $language . ".txt";
+		$file = getModulePath ( "country_list", true ) . "data/" . $folder . "/" . $language . ".txt";
 		// @FIXME: Prüfen ob Datei existiert
 		// und Exception werfen wenn Datei nicht vorhanden
-		$data = file_get_contents ( $data );
+		$data = file_get_contents ( $file );
 		$data = normalizeLN ( $data, "\n" );
 		$data = explode ( "\n", $data );
-		foreach ( $data as $line ) {
-			$myLine = trim ( $line );
+		for($i = 0; $i < count ( $data ); $i ++) {
+			$myLine = trim ( $data [$i] );
 			if (! empty ( $myLine )) {
 				$splitted = explode ( ":", $myLine );
 				$country = new Country ();
