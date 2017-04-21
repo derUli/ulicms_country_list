@@ -1,5 +1,5 @@
 <?php
-class Country{
-    public $name = null;
-    public $code = null;
+class Country {
+	public $name = null;
+	public $code = null;
 }
