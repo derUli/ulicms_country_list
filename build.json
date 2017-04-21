@@ -3,5 +3,5 @@
    "version" : "2017.4.21",
    "description" : "List of all countries including country code",
    "categories" : ["countries", "list"],
-   "compatible_from" : "2017.1"
+   "compatible_from" : "2017.3"
 }

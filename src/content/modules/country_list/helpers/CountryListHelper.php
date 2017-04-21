@@ -1,5 +1,31 @@
 <?php
 class CountryListHelper extends Helper {
+	public function sync() {
+		$fileCountries = $this->getAllCountries ();
+		foreach ( $fileCountries as $country ) {
+			$sql = "select code from `{prefix}country` where code = ?";
+			$args = array (
+					$country->code 
+			);
+			$query = Database::pQuery ( $sql, $args, true );
+			if (! Database::any ( $query )) {
+				$sql = Database::pQuery ( "insert into `{prefix}country` (code) values (?)" );
+				$args = array (
+						$country->code 
+				);
+				Database::pQuery ( $sql, $args, true );
+			}
+		}
+		$sql = "select code from `{prefix}country`";
+		$query = Database::query ( $sql, true );
+		while ( $row = Database::fetchObject ( $query ) ) {
+			if (! in_array ( $row->code, $fileCountries )) {
+				Database::pQuery ( "delete from `{prefix}country` where code = ?", array (
+						$row->code 
+				), true );
+			}
+		}
+	}
 	public function getAllCountries($language = null, $folder = "default") {
 		$result = array ();
 		if (! $language) {
@@ -68,7 +94,7 @@ class CountryListHelper extends Helper {
 				$country->code = trim ( $splitted [0] );
 				$country->name = trim ( $splitted [1] );
 				if ($country->name == $name) {
-					$result = $name;
+					$result = $country;
 					break;
 				}
 			}
