@@ -3,6 +3,9 @@
 	"version" : "2017.4.21",
 	"embed" : false,
 	"objects" : {
-		"Country" : "objects/Country"
+			"Country" : "objects/Country"
+	},
+	"helpers" : {
+			"CountryListHelper" : "helpers/CountryListHelper"
 	}
 }
