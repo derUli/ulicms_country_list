@@ -1,6 +1,6 @@
 {
    "id" : "countries_list",
-   "version" : "1.0.0",
+   "version" : "2017.4.21",
    "description" : "List of all countries including code",
    "categories" : ["countries", "list"],
    "compatible_from" : "2017.1"
