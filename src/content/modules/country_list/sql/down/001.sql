@@ -1,1 +1,1 @@
-DROP TABLE `{prefix}country`
+drop table `{prefix}countries`

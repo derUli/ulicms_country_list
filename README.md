@@ -1,2 +1,2 @@
 # ulicms_country_list
-List of all Country Names and Country Codes
+List of all Country Names

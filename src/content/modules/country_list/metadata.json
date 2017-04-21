@@ -1,11 +1,5 @@
 {
 	"source" : "extend",
-	"version" : "2017.4.21",
-	"embed" : false,
-	"objects" : {
-			"Country" : "objects/Country"
-	},
-	"helpers" : {
-			"CountryListHelper" : "helpers/CountryListHelper"
-	}
+	"version": "2017.4.19",
+	"embed" : false
 }
