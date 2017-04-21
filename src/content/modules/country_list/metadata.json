@@ -1,8 +1,8 @@
 {
 	"source" : "extend",
-	"version" : "0.0.1",
+	"version" : "1.0",
 	"embed" : false,
 	"objects" : {
-		"StopWatch" : "objects/StopWatch"
+		"Country" : "objects/Country"
 	}
 }
