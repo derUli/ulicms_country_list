@@ -1,0 +1,8 @@
+{
+	"source" : "extend",
+	"version" : "0.0.1",
+	"embed" : false,
+	"objects" : {
+		"StopWatch" : "objects/StopWatch"
+	}
+}
