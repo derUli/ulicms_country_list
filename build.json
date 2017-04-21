@@ -1,5 +1,5 @@
 {
-   "id" : "countries_list",
+   "id" : "country_list",
    "version" : "2017.4.21",
    "description" : "List of all countries including code",
    "categories" : ["countries", "list"],
