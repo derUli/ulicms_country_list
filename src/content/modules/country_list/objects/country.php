@@ -64,7 +64,10 @@ class Country {
 		$this->isoNumeric = $result->isoNumeric;
 		$this->north = $result->north;
 		$this->east = $result->east;
+		$this->west = $result->west;
+		$this->south = $result->south;
 		$this->capital = $result->capital;
+		$this->continent = $result->continent;
 		$this->continentName = $result->continentName;
 		$this->languages = $result->languages;
 		$this->isoAlpha3 = $result->isoAlpha3;
