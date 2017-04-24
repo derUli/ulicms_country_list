@@ -8,7 +8,10 @@ class Country {
 	protected $isoNumeric = null;
 	protected $north = null;
 	protected $east = null;
+	protected $south = null;
+	protected $west = null;
 	protected $capital = null;
+	protected $continent = null;
 	protected $continentName = null;
 	protected $languages = null;
 	protected $isoAlpha3 = null;
@@ -135,5 +138,53 @@ class Country {
 		$this->id = null;
 		return $query;
 	}
-	// @TODO: Getter und Setter implementieren
+	public function getId() {
+		return $this->id;
+	}
+	public function getCountryCode() {
+		return $this->countryCode;
+	}
+	public function getCountryName() {
+		return $this->countryName;
+	}
+	public function getCurrencyCode() {
+		return $this->currencyCode;
+	}
+	public function getFipsCode() {
+		return $this->fipsCode;
+	}
+	public function getIsoNumeric() {
+		return $this->isoNumeric;
+	}
+	public function getNorth() {
+		return $this->north;
+	}
+	public function getEast() {
+		return $this->east;
+	}
+	public function getSouth() {
+		return $this->south;
+	}
+	public function getWest() {
+		return $this->west;
+	}
+	public function getCapital() {
+		return $this->capital;
+	}
+	public function getContinent() {
+		return $this->continent;
+	}
+	public function getContinentName() {
+		return $this->continentName;
+	}
+	public function getLanguages() {
+		return $this->languages;
+	}
+	public function getIsoAlpha3() {
+		return $this->isoAlpha3;
+	}
+	public function getGeonameId() {
+		return $this->geonameId;
+	}
+	// @TODO: implementieren
 }
