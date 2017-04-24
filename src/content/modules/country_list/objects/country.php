@@ -53,5 +53,18 @@ class Country {
 	}
 	public function fillVars($query) {
 		$result = Database::fetchobject ( $query );
+		$this->id = $result->id;
+		$this->countryCode = $result->countryCode;
+		$this->countryName = $result->countryName;
+		$this->currencyCode = $result->currencyCode;
+		$this->fipsCode = $result->fipsCode;
+		$this->isoNumeric = $result->isoNumeric;
+		$this->north = $result->north;
+		$this->east = $result->east;
+		$this->capital = $result->capital;
+		$this->continentName = $result->continentName;
+		$this->languages = $result->languages;
+		$this->isoAlpha3 = $result->isoAlpha3;
+		$this->geonameId = $result->geonameId;
 	}
 }
