@@ -74,10 +74,22 @@ class Country {
 			$this->update ();
 		}
 	}
-	public function insert() {
+	protected function insert() {
 		throw new NotImplementedException ();
 	}
-	public function update() {
+	protected function update() {
 		throw new NotImplementedException ();
+	}
+	public function delete() {
+		if (is_null ( $this->id )) {
+			return false;
+		}
+		$sql = "delete from {prefix}countries where id = ?";
+		$args = array (
+				$this->id 
+		);
+		$query = Database::pQuery ( $sql, $args, true );
+		$this->id = null;
+		return $query;
 	}
 }
