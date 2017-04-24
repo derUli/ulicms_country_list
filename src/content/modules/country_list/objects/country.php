@@ -113,4 +113,5 @@ class Country {
 		$this->id = null;
 		return $query;
 	}
+	// @TODO: Getter und Setter implementieren
 }
