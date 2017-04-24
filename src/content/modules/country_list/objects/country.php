@@ -1,5 +1,18 @@
 <?php
 class Country {
+	protected $id = null;
+	protected $countryCode = null;
+	protected $countryName = null;
+	protected $currencyCode = null;
+	protected $fipsCode = null;
+	protected $isoNumeric = null;
+	protected $north = null;
+	protected $east = null;
+	protected $capital = null;
+	protected $continentName = null;
+	protected $languages = null;
+	protected $isoAlpha3 = null;
+	protected $geonameId = null;
 	public function __construct($id = null) {
 		if (! is_null ( $id )) {
 			$this->loadById ( $id );
