@@ -3,6 +3,7 @@
 	"version": "2017.4.24",
 	"embed" : false,
 	"objects" : {
-		"Country" : "objects/country"
+		"Country" : "objects/country",
+		"CountryManager" : "objects/country_manager"
 	}
 }
