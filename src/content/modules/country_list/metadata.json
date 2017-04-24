@@ -1,5 +1,8 @@
 {
 	"source" : "extend",
 	"version": "2017.4.19",
-	"embed" : false
+	"embed" : false,
+	"objects" : {
+		"Country" : "objects/country"
+	}
 }
