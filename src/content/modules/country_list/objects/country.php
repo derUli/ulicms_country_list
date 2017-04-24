@@ -20,7 +20,7 @@ class Country {
 	}
 	public function loadById($id) {
 		$id = intval ( $id );
-		$sql = "select * from {prefix}countries where id = ?";
+		$sql = "select * from `{prefix}countries` where id = ?";
 		$args = array (
 				$id 
 		);
@@ -31,7 +31,7 @@ class Country {
 	}
 	public function loadByCountryCode($countryCode) {
 		$countryCode = strval ( $countryCode );
-		$sql = "select * from {prefix}countries where countryCode = ?";
+		$sql = "select * from `{prefix}countries` where countryCode = ?";
 		$args = array (
 				$countryCode 
 		);
@@ -42,7 +42,7 @@ class Country {
 	}
 	public function loadByCountryName($countryName) {
 		$countryCode = strval ( $countryName );
-		$sql = "select * from {prefix}countries where countryName = ?";
+		$sql = "select * from `{prefix}countries` where countryName = ?";
 		$args = array (
 				$countryName 
 		);
@@ -75,7 +75,28 @@ class Country {
 		}
 	}
 	protected function insert() {
-		throw new NotImplementedException ();
+		$sql = "INSERT INTO `{prefix}countries` (`countryCode`, `countryName`, `currencyCode`, `fipsCode`, `isoNumeric`, `north`, `south`, `east`, `west`, `capital`, `continentName`, 
+				`continent`, `languages`, `isoAlpha3`, `geonameId`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+		$args = array (
+				$this->countryCode,
+				$this->countryName,
+				$this->currencyCode,
+				$this->fipsCode,
+				$this->isoNumeric,
+				$this->north,
+				$this->south,
+				$this->east,
+				$this->west,
+				$this->capital,
+				$this->continentName,
+				$this->continent,
+				$this->languages,
+				$this->isoAlpha3,
+				$this->geonameId 
+		);
+		$result = Database::pQuery ( $sql, $args, true );
+		$this->id = Database::getLastInsertId ();
+		return $result;
 	}
 	protected function update() {
 		throw new NotImplementedException ();
@@ -84,7 +105,7 @@ class Country {
 		if (is_null ( $this->id )) {
 			return false;
 		}
-		$sql = "delete from {prefix}countries where id = ?";
+		$sql = "delete from `{prefix}countries` where id = ?";
 		$args = array (
 				$this->id 
 		);
