@@ -186,5 +186,5 @@ class Country {
 	public function getGeonameId() {
 		return $this->geonameId;
 	}
-	// @TODO: implementieren
+	// @TODO: getter implementieren
 }
