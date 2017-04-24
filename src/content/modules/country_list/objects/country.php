@@ -99,7 +99,29 @@ class Country {
 		return $result;
 	}
 	protected function update() {
-		throw new NotImplementedException ();
+		$sql = "UPDATE `{prefix}countries` set `countryCode` = ?, `countryName`= ?, `currencyCode` = ?, `fipsCode` = ?, `isoNumeric` = ?, `north` = ?, 
+				`south` = ?, `east` = ?, `west` = ?, `capital` = ?, `continentName` = ?, 
+				`continent` = ?, `languages` = ?, `isoAlpha3` = ?, `geonameId` = ? where id = ?";
+		$args = array (
+				$this->countryCode,
+				$this->countryName,
+				$this->currencyCode,
+				$this->fipsCode,
+				$this->isoNumeric,
+				$this->north,
+				$this->south,
+				$this->east,
+				$this->west,
+				$this->capital,
+				$this->continentName,
+				$this->continent,
+				$this->languages,
+				$this->isoAlpha3,
+				$this->geonameId,
+				$this->id 
+		);
+		$result = Database::pQuery ( $sql, $args, true );
+		return $result;
 	}
 	public function delete() {
 		if (is_null ( $this->id )) {
