@@ -186,5 +186,52 @@ class Country {
 	public function getGeonameId() {
 		return $this->geonameId;
 	}
-	// @TODO: getter implementieren
+	public function setId($val) {
+		$this->id = intval ( $val );
+	}
+	public function setCountryCode($val) {
+		$this->countryCode = StringHelper::isNotNullOrWhitespace ( $val ) ? strval ( $val ) : null;
+	}
+	public function setCountryName($val) {
+		$this->countryName = StringHelper::isNotNullOrWhitespace ( $val ) ? strval ( $val ) : null;
+	}
+	public function setCurrencyCode($val) {
+		$this->currencyCode = StringHelper::isNotNullOrWhitespace ( $val ) ? strval ( $val ) : null;
+	}
+	public function setFipsCode($val) {
+		$this->fipsCode = StringHelper::isNotNullOrWhitespace ( $val ) ? strval ( $val ) : null;
+	}
+	public function setIsoNumeric($val) {
+		$this->isoNumeric = StringHelper::isNotNullOrWhitespace ( $val ) ? strval ( $val ) : null;
+	}
+	public function setNorth($val) {
+		$this->north = StringHelper::isNotNullOrWhitespace ( $val ) ? floatval ( $val ) : null;
+	}
+	public function setEast($val) {
+		$this->east = StringHelper::isNotNullOrWhitespace ( $val ) ? floatval ( $val ) : null;
+	}
+	public function setSouth($val) {
+		$this->south = StringHelper::isNotNullOrWhitespace ( $val ) ? floatval ( $val ) : null;
+	}
+	public function setWest($val) {
+		$this->west = StringHelper::isNotNullOrWhitespace ( $val ) ? floatval ( $val ) : null;
+	}
+	public function setCapital($val) {
+		$this->capital = StringHelper::isNotNullOrWhitespace ( $val ) ? strval ( $val ) : null;
+	}
+	public function setContinent($val) {
+		$this->continent = StringHelper::isNotNullOrWhitespace ( $val ) ? strval ( $val ) : null;
+	}
+	public function setContinentName($val) {
+		$this->continentName = StringHelper::isNotNullOrWhitespace ( $val ) ? strval ( $val ) : null;
+	}
+	public function setLanguages($val) {
+		$this->languages = StringHelper::isNotNullOrWhitespace ( $val ) ? strval ( $val ) : null;
+	}
+	public function setIsoAlpha3($val) {
+		$this->isoAlpha3 = StringHelper::isNotNullOrWhitespace ( $val ) ? strval ( $val ) : null;
+	}
+	public function setGeonameId($val) {
+		$this->geonameId = StringHelper::isNotNullOrWhitespace ( $val ) ? intval ( $val ) : null;
+	}
 }
