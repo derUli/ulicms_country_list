@@ -29,7 +29,7 @@ class Country {
 			$this->fillVars ( $query );
 		}
 	}
-	public function loadByCountryCode($id) {
+	public function loadByCountryCode($countryCode) {
 		$countryCode = strval ( $countryCode );
 		$sql = "select * from {prefix}countries where countryCode = ?";
 		$args = array (
@@ -40,7 +40,7 @@ class Country {
 			$this->fillVars ( $query );
 		}
 	}
-	public function loadByCountryName($id) {
+	public function loadByCountryName($countryName) {
 		$countryCode = strval ( $countryName );
 		$sql = "select * from {prefix}countries where countryName = ?";
 		$args = array (
