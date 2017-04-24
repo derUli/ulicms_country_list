@@ -67,4 +67,17 @@ class Country {
 		$this->isoAlpha3 = $result->isoAlpha3;
 		$this->geonameId = $result->geonameId;
 	}
+	public function save() {
+		if (is_null ( $this->id )) {
+			$this->insert ();
+		} else {
+			$this->update ();
+		}
+	}
+	public function insert() {
+		throw new NotImplementedException ();
+	}
+	public function update() {
+		throw new NotImplementedException ();
+	}
 }
