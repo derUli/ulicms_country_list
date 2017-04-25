@@ -66,7 +66,7 @@ class CountryListTest extends PHPUnit_Framework_TestCase {
 		$country = new Country ();
 		$country->setCountryCode ( "LP" );
 		$country->setCountryName ( "Lampukistan" );
-		$country->setFipsCode ( "LMP" );
+		$country->setFipsCode ( "LM" );
 		$country->setIsoNumeric ( "666" );
 		$country->setNorth ( 43.006054 );
 		$country->setSouth ( 37.673332 );
@@ -82,7 +82,7 @@ class CountryListTest extends PHPUnit_Framework_TestCase {
 		$this->assertNotNull ( $country->getId () );
 		$this->assertEquals ( "LP", $country->getCountryCode () );
 		$this->assertEquals ( "Lampukistan", $country->getCountryName () );
-		$this->assertEquals ( "LMP", $country->getFipsCode () );
+		$this->assertEquals ( "LM", $country->getFipsCode () );
 		$this->assertEquals ( "666", $country->getIsoNumeric () );
 		$this->assertEquals ( 43.006054, $country->getNorth () );
 		$this->assertEquals ( 37.673332, $country->getSouth () );
@@ -101,7 +101,7 @@ class CountryListTest extends PHPUnit_Framework_TestCase {
 		$this->assertNotNull ( $country->getId () );
 		$this->assertEquals ( "LP", $country->getCountryCode () );
 		$this->assertEquals ( "Lampukistan", $country->getCountryName () );
-		$this->assertEquals ( "LMP", $country->getFipsCode () );
+		$this->assertEquals ( "LM", $country->getFipsCode () );
 		$this->assertEquals ( "666", $country->getIsoNumeric () );
 		$this->assertEquals ( 43.006054, $country->getNorth () );
 		$this->assertEquals ( 37.673332, $country->getSouth () );
