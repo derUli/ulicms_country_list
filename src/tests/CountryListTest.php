@@ -1,7 +1,7 @@
 <?php
 class CountryListTest extends PHPUnit_Framework_TestCase {
 	public function setUp() {
-		Database::query ( "delete from {prefix}countries where countryName = 'Lampukistan'" );
+		Database::query ( "delete from {prefix}countries where countryName = 'Lampukistan'", true );
 	}
 	public function tearDown() {
 		$this->setUp ();
